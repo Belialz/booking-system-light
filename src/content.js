@@ -47,7 +47,7 @@ function startEnterSpam() {
             console.log('Enter pressed');
         }, 2000);
         
-        showNotification("Enter Spammer", "✅ Automatic Enter input started!");
+        showNotification("Enter Spammer", "🔄 Proces rozpoczęty!");
     }
 }
 
@@ -61,7 +61,7 @@ function stopEnterSpam() {
         document.title = "❌ Spam Stopped! " + originalTitle;
         chrome.runtime.sendMessage({ action: "highlightTab" });
 
-        showNotification("Enter Spammer", "⛔ Automatic Enter input stopped.");
+        showNotification("Enter Spammer", "✅ Zmiana czasu okazała się sukcesem!");
     }
     if (observer) {
         observer.disconnect();
