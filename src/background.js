@@ -17,6 +17,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         chrome.action.setBadgeBackgroundColor({ color: "#FF0000" });
         setTimeout(() => {
             chrome.action.setBadgeText({ text: "" });
-        }, 5000);
+        }, 60000);
+    }
+});
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "modalOpened") {
+        console.log("🟢 Modal opened (Received from content.js)");
+    }
+
+    if (message.action === "modalClosed") {
+        console.log("🔴 Modal closed (Received from content.js)");
     }
 });
